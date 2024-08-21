@@ -8,9 +8,6 @@ services:
     container_name: flask_docker_ngrok_practice
     ports:
       - 5001:5001
-    volumes:
-      - .:/app
     environment:
       - NA
-    command:
-      - ["/opt/venv/bin/python", "run.py"]
+    restart: unless-stopped

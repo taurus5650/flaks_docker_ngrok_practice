@@ -1,7 +1,7 @@
 FROM python:3.12
 
 RUN apt-get update && apt-get install -y \
-    python3-venv \
+    python3-venv wget unzip supervisor \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -12,6 +12,12 @@ RUN python3 -m venv /opt/venv
 RUN /opt/venv/bin/pip install --upgrade pip
 RUN /opt/venv/bin/pip install -r requirements.txt
 
+# Download Ngrok
+RUN wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.zip -O /tmp/ngrok.zip \
+    && unzip /tmp/ngrok.zip -d /usr/local/bin \
+    && rm /tmp/ngrok.zip
+
 # EXPOSE 5001
 
 CMD ["/opt/venv/bin/python", "run.py"]
+
