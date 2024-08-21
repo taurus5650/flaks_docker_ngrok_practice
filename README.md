@@ -29,7 +29,8 @@ $ poetry shell
 Coding ... ...
 
 ### Provide Ngrok Token
-- ngrok.yml
+Input token to ngrok.yml.
+The token get from https://dashboard.ngrok.com/get-started/your-authtoken
 ![ngrok_token.png](readme%2Fngrok_token.png)
 
 ### After all done then build up the webhook / website
