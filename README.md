@@ -28,36 +28,20 @@ $ poetry shell
 ### Coding
 Coding ... ...
 
-### Build Docker image
-```commandline
-$ docker build -t flask_docker_ngrok_practice:latest . 
-```
-
-### Ngrok config in Docker
-https://dashboard.ngrok.com/get-started/setup/macos
-```commandline
-$ docker run -p 5001:5001 --name custom_name_flask flask_docker_ngrok_practice:latest
-$ docker exec -it custom_name_flask /bin/sh
-$ ngrok config add-authtoken {YOUR_TOKEN}
-```
+### Provide Ngrok Token
+- ngrok.yml
+![ngrok_token.png](readme%2Fngrok_token.png)
 
 ### After all done then build up the webhook / website
 ```commandline
-$ docker start custom_name_flask
-$ docker exec -it custom_name_flask /bin/sh
-$ ngrok http 5001
+$ docker-compose build
+$ docker-compose up 
 ```
-![ngrok.png](readme%2Fngrok.png)
-
-
-### If the code changed
-```commandline
-$ docker-compose up -d
-```
+![url.png](readme%2Furl.png)
 
 ### Happy Testing
-https://2d04-118-167-218-47.ngrok-free.app/
-![img.png](readme/img.png)
+https://fa96-118-167-218-47.ngrok-free.app
+![img.png](readme%2Fimg.png)
 
 
 

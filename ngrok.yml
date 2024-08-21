@@ -1,0 +1,9 @@
+version: "2"
+authtoken: <TOKEN>
+update: false
+log: stdout
+
+tunnels:
+  app-foo:
+    addr: flask_docker_ngrok_practice:5001
+    proto: http
