@@ -12,7 +12,7 @@ Build a simple webhook / website, practice how to use ...
 - When the project start from 0 to 1
 ```commandline
 $ poetry init # Enter No, No, Yes
-$ python3 -m venv venv
+$ python3 -m venv .venv
 $ poetry env use /PATH/flask_docker_ngrok_practice/venv/bin/python3
 $ poetry shell 
 $ poetry add xxx # Package name e.g. poetry add flask
